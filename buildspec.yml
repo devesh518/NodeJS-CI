@@ -11,8 +11,8 @@ services:
 
 env:
   variables:
-    NODE_ENV="ci"
-    PORT="3000"
+    NODE_ENV: "ci"
+    PORT: "3000"
 
 cache:
   directories:
