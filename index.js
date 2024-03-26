@@ -27,7 +27,7 @@ app.use(
 );
 app.use(passport.initialize());
 app.use(passport.session());
-
+// This is a comment I am adding only so i can commit it
 require('./routes/authRoutes')(app);
 require('./routes/blogRoutes')(app);
 
