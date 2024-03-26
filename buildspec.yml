@@ -13,6 +13,8 @@ phases:
       commands:
         - echo Entered the install phase
         - npm install
+        - nohup npm run start &
+        - sleep 4
         - echo Entered the build phase
         - npm run build
         - echo Entered the testing phase
@@ -26,9 +28,4 @@ phases:
   cache:
     paths:
       - node_modules
-      - client/node_modules  
-
-  build:
-    - nohup npm run start &
-    - sleep 4
-    - npm run test
+      - client/node_modules
