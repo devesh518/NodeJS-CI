@@ -5,22 +5,30 @@ env:
     node_env: "ci"
     port: "3000"
 
-env:
-  variables:
-    NODE_ENV: $node_env
-    PORT: $port
+phases:
+  install:
+    runtime-versions:
+      nodejs: 12
+    build:
+      commands:
+        - echo Entered the install phase
+        - npm install
+        - echo Entered the build phase
+        - npm run build
+        - echo Entered the testing phase
+        - npm run test
 
-cache:
-  paths:
-    - node_modules
-    - client/node_modules
+  env:
+    variables:
+      NODE_ENV: $node_env
+      PORT: $port
 
-install:
-  commands:
-    - npm install
-    - npm run build
+  cache:
+    paths:
+      - node_modules
+      - client/node_modules  
 
-build:
-  - nohup npm run start &
-  - sleep 4
-  - npm run test
+  build:
+    - nohup npm run start &
+    - sleep 4
+    - npm run test
