@@ -5,6 +5,17 @@ env:
     node_env: "ci"
     port: "3000"
 
+language: node_js
+
+node_js: 
+  - "8"
+
+dist: trusty
+
+services:
+  - mongodb
+  - redis-server
+
 env:
   variables:
     NODE_ENV: $node_env
@@ -20,7 +31,7 @@ install:
     - npm install
     - npm run build
 
-build:
+script:
   - nohup npm run start &
   - sleep 4
   - npm run test
