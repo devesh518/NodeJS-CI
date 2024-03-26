@@ -1,5 +1,10 @@
 version: 0.2
 
+env:
+  variables:
+    node_env: "ci"
+    port: "3000"
+
 language: node_js
 
 node_js: 
@@ -13,8 +18,8 @@ services:
 
 env:
   variables:
-    - NODE_ENV: "ci"
-    - PORT: "3000"
+    NODE_ENV: $node_env
+    PORT: $port
 
 cache:
   directories:
