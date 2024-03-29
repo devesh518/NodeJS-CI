@@ -5,5 +5,7 @@ module.exports = {
   mongoURI:
     "mongodb+srv://devesh518:ddrk2002@devesh.rhaoaql.mongodb.net/advnode",
   cookieKey: "123123123",
-  redisURL: "redis://127.0.0.1:6379"
+  redisURL: "redis://127.0.0.1:6379",
+  accessKeyId: 'AKIASGXBO6SNGCURZEGJ',
 };
+ 
